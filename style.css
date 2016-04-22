@@ -18,12 +18,39 @@ form {
     display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 label {
     text-transform: uppercase;
     color: #9c9c9c;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #c8c8c8;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+input:focus {
+    border-color: #0880fd;
+}
+
+input[type=submit] {
+    max-width: 50%;
+    color: white;
+    background-color: #0880fd;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+}
+
+input[type=submit]:hover {
+    background-color: #28a0fd;
 }
 
 .header {
@@ -38,5 +65,5 @@ label {
 }
 
 .half-width {
-    max-width: 50%;
+    max-width: 48%;
 }
