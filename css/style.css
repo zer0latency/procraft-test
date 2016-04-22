@@ -28,7 +28,7 @@ label {
     margin-bottom: 10px;
 }
 
-input {
+input, .suggestions {
     padding: 15px;
     background-color: white;
     border: 1px solid #c8c8c8;
@@ -66,4 +66,18 @@ input[type=submit]:hover {
 
 .half-width {
     max-width: 48%;
+}
+
+.suggestions {
+    list-style-type: none;
+    background: transparent;
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-top: -5px;
+}
+
+.suggestions li {
+    margin: 10px 0;
+    cursor: pointer;
 }

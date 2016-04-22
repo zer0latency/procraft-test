@@ -5,9 +5,12 @@
   "main": "app.js",
   "dependencies": {
     "css-loader": "^0.23.1",
+    "lodash": "^4.11.1",
     "style-loader": "^0.13.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "npm-install-webpack-plugin": "^3.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
