@@ -81,3 +81,21 @@ input[type=submit]:hover {
     margin: 10px 0;
     cursor: pointer;
 }
+
+.input-group {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.has-addon {
+    border-radius: 0px 5px 5px 0px;
+    width: 100%;
+}
+
+.input-group-addon {
+    border: 1px solid #c8c8c8;
+    border-radius: 5px 0px 0px 5px;
+    background-color: #f9f9f9;
+    width: 75px;
+    border-right: none;
+}

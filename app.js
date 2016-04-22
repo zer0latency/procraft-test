@@ -1,14 +1,16 @@
-require("./css/style.css");
 require("lodash");
+require("./css/style.css");
 
 (function (d, w) {
     // Зависимости
     var professions          = require('./storage/professions.js'),
-        renderSuggestionList = require('./js/suggestion-list.js');
+        countries            = require('./storage/countries.js'  ),
+        renderSuggestionList = require('./js/suggestion-list.js' );
 
     var suggestionList,
         inputProfession = d.getElementById('profession');
 
+    // Автодополнение профессий
     inputProfession.addEventListener('keyup', _.debounce(function () {
         suggestionList && this.parentNode.removeChild(suggestionList);
         suggestionList = renderSuggestionList(inputProfession.value, professions.fetch());
@@ -27,4 +29,7 @@ require("lodash");
             suggestionList = undefined;
         });
     }, 100));
+
+    // Выбор страны
+
 })(document, window);
