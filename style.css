@@ -2,9 +2,6 @@ html {
     background: white;
     min-height: 100%;
     font-family: sans-serif;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
     width: 400px;
 }
 
@@ -17,10 +14,29 @@ body {
     flex: auto;
 }
 
+form {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 label {
     text-transform: uppercase;
+    color: #9c9c9c;
 }
 
 .header {
     text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.half-width {
+    max-width: 50%;
 }
