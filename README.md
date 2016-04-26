@@ -1,2 +1,6 @@
 # A Test for Procraft
-Builds using `webpack`
+Builds using `webpack`:
+```
+npm install
+webpack
+```
