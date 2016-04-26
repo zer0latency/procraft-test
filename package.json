@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "css-loader": "^0.23.1",
+    "reset.css": "^2.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7"
   },

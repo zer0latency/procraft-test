@@ -1,3 +1,4 @@
+require("reset.css");
 require("./css/style.css");
 
 (function (d, w) {
