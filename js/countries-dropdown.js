@@ -1,7 +1,14 @@
 module.exports = function (button, d) {
-    var countries = require('../storage/countries.js');
+    var countries = require('../storage/countries.js'),
+        currentDropdown;
 
     button.addEventListener('click', function (e) {
+        if (currentDropdown) {
+            currentDropdown.parentNode.removeChild(currentDropdown);
+            currentDropdown = undefined;
+            return;
+        }
+
         var formGroup      = this.parentNode.parentNode.parentNode,
             cddList        = d.createElement('ul'),
             countriesData  = countries.fetch(),
@@ -18,14 +25,15 @@ module.exports = function (button, d) {
             newLi.insertAdjacentHTML('beforeEnd', liHtml);
             newLi.addEventListener('click', (function (country) {
                 return function () {
-                    console.log(country);
                     countryDisplay.style.backgroundPosition = "0px " + country.sprite_offset + "px";
                     phoneInput.value = country.code;
                     formGroup.removeChild(cddList);
+                    currentDropdown = undefined;
                 };
             })(country));
             cddList.appendChild(newLi);
         }
         formGroup.appendChild(cddList);
+        currentDropdown = cddList;
     });
 }

@@ -24,9 +24,14 @@ var renderSuggestionList = function (rq, data) {
 
 module.exports = function (inputElement, d) {
     var professions = require('../storage/professions.js'),
-        suggestionList;
+        suggestionList,
+        prevValue = '';
 
     inputElement.addEventListener('keyup', function () {
+        if (inputElement.value === prevValue) {
+            return true;
+        }
+        prevValue = inputElement.value;
         suggestionList && this.parentNode.removeChild(suggestionList);
         suggestionList = renderSuggestionList(inputElement.value, professions.fetch());
         suggestionList = this.parentNode.appendChild(suggestionList);
