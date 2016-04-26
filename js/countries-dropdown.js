@@ -9,7 +9,7 @@ module.exports = function (button, d) {
             return;
         }
 
-        var formGroup      = this.parentNode.parentNode.parentNode,
+        var formGroup      = this.parentNode.parentNode,
             cddList        = d.createElement('ul'),
             countriesData  = countries.fetch(),
             countryDisplay = d.getElementById('country-display')
