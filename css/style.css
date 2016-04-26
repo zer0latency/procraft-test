@@ -72,9 +72,8 @@ input[type=submit]:hover {
     list-style-type: none;
     background: transparent;
     border-top: none;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    margin-top: -5px;
+    border-radius: 0px 0px 5px 5px;
+    margin-top: -3px;
 }
 
 .suggestions li {
@@ -96,6 +95,39 @@ input[type=submit]:hover {
     border: 1px solid #c8c8c8;
     border-radius: 5px 0px 0px 5px;
     background-color: #f9f9f9;
-    width: 75px;
+    min-width: 75px;
     border-right: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.country-display {
+    display: inline-block;
+    width: 24px;
+    height: 17px;
+    background-image: url('../img/countries-sprite.png');
+}
+
+.dropdown-toggle {
+    color: #c8c8c8;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.dropdown-toggle:hover {
+    color: #787878;
+}
+
+.countries-dropdown-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 75px;
+    border: 1px solid #c8c8c8;
+    border-top: none;
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

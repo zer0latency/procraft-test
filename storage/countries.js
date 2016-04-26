@@ -1,9 +1,9 @@
 module.exports = {
     fetch: function () {
         return {
-            'russia':  { text: 'Россия',  code: '+7',  flag: 'russia.png'  },
-            'ukraine': { text: 'Украина', code: '+38', flag: 'ukraine.png' },
-            'iran':    { text: 'Иран',    code: '+98', flag: 'iran.png'    }
+            "russia":  { "text": "Россия",  "code": "+7",  "sprite_offset": "0"  },
+            "ukraine": { "text": "Украина", "code": "+38", "sprite_offset": "-17" },
+            "iran":    { "text": "Иран",    "code": "+98", "sprite_offset": "-34" }
         };
     }
 }

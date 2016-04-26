@@ -7,6 +7,7 @@ module.exports = {
     resolve: ['node_modules'],
     module: {
         loaders: [
+            { test: /\.(png|jpg|jpeg|gif|woff)$/, loader: 'url-loader?limit=8192' },
             { test: /\.css$/, loader: "style!css" }
         ]
     },

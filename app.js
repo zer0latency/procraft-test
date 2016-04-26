@@ -1,35 +1,16 @@
-require("lodash");
 require("./css/style.css");
 
 (function (d, w) {
     // Зависимости
-    var professions          = require('./storage/professions.js'),
-        countries            = require('./storage/countries.js'  ),
-        renderSuggestionList = require('./js/suggestion-list.js' );
+    var suggestionList    = require('./js/suggestion-list.js' ),
+        countriesDropdown = require('./js/countries-dropdown.js');
 
-    var suggestionList,
-        inputProfession = d.getElementById('profession');
+    var inputProfession         = d.getElementById('profession')
+        countriesDropdownButton = d.getElementById('countries-dropdown');
 
-    // Автодополнение профессий
-    inputProfession.addEventListener('keyup', _.debounce(function () {
-        suggestionList && this.parentNode.removeChild(suggestionList);
-        suggestionList = renderSuggestionList(inputProfession.value, professions.fetch());
-        suggestionList = this.parentNode.appendChild(suggestionList);
+    // Подсказки профессий
+    suggestionList(inputProfession, d);
 
-        suggestionList.addEventListener('click', function (e) {
-            var target = e.target;
-
-            if (target.localName === 'strong') {
-                target = target.parentNode;
-            }
-
-            inputProfession.value = target.getAttribute('data');
-
-            suggestionList.parentNode.removeChild(suggestionList);
-            suggestionList = undefined;
-        });
-    }, 100));
-
-    // Выбор страны
-
+    // Дропдаун с флажками
+    countriesDropdown(countriesDropdownButton, d);
 })(document, window);

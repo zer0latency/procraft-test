@@ -1,4 +1,4 @@
-module.exports = function (rq, data) {
+var renderSuggestionList = function (rq, data) {
     var lis = [],
         ul = document.createElement('ul');
 
@@ -20,4 +20,28 @@ module.exports = function (rq, data) {
     }
 
     return ul;
-}
+};
+
+module.exports = function (inputElement, d) {
+    var professions = require('../storage/professions.js'),
+        suggestionList;
+
+    inputElement.addEventListener('keyup', function () {
+        suggestionList && this.parentNode.removeChild(suggestionList);
+        suggestionList = renderSuggestionList(inputElement.value, professions.fetch());
+        suggestionList = this.parentNode.appendChild(suggestionList);
+
+        suggestionList.addEventListener('click', function (e) {
+            var target = e.target;
+
+            if (target.localName === 'strong') {
+                target = target.parentNode;
+            }
+
+            inputElement.value = target.getAttribute('data');
+
+            suggestionList.parentNode.removeChild(suggestionList);
+            suggestionList = undefined;
+        });
+    });
+};
